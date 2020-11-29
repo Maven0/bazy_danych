@@ -1,0 +1,30 @@
+
+
+
+Zadanie 3.
+
+a) UPDATE postac set statek='Polska' where nazwa like '%a%';
+b) UPDATE statek set max_ladownosc=max_ladownosc*0.7 where data_wodowania BETWEEN '1901-01-01' and '2000-12-31';
+c) ALTER TABLE postac ADD CHECK(wiek<=1000);
+
+Zadanie 4.
+
+ALTER TABLE postac MODIFY rodzaj ENUM('waz','Wiking','Kobieta','Ptak','Syrena');
+INSERT INTO postac VALUES(10,'Loko','1800-10-10', 220, NULL, NULL,'01234567890','waz');
+CREATE TABLE Marynarz SELECT * FROM postac;
+UPDATE Marynarz SET rodzaj='Wiking' WHERE nazwa='Bjorn';
+DELETE FROM Marynarz WHERE nazwa='Loko';
+
+Zadanie 5.
+
+UPDATE postac SET statek=null;
+UPDATE Marynarz SET statek=null;
+DELETE FROM postac where nazwa='Olaf';
+DELETE FROM Marynarz where nazwa='Olaf';
+DELETE FROM statek WHERE nazwa_statku='Polska';
+DELETE FROM statek WHERE nazwa_statku='Olsztyn';
+DROP TABLE statek;
+ALTERTABLE postac3 DROP FOREIGN KEY postac_ibfk_1;
+DROP TABLE statek;
+CREATE TABLE zwierz(id_zwierza int primary key auto_increment, nazwa varchar(40), wiek int unsigned);
+SELECT nazwa, data_ur, wiek, pesel FROM postac WHERE nazwa='Drozd';

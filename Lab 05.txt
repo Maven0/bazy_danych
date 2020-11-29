@@ -1,0 +1,33 @@
+uwm-a008-36.uwm.edu.pl
+
+
+Zadanie 1.
+
+1.
+2. SELECT * FROM zasob;
+3. SELECT * FROM zasob where rodzaj="jedzenie"; 
+4. SELECT idZasobu, ilosc from zasob where idZasobu=1 or idZasobu=3 or idZasobu=5; 
+
+Zadanie 2.
+
+1. SELECT * FROM kreatura WHERE NOT rodzaj='wiedzma' AND udzwig>=50;
+2. SELECT nazwa, waga FROM zasob WHERE waga BETWEEN 2 AND 5;
+3. SELECT nazwa FROM kreatura WHERE nazwa LIKE "%or%" and udzwig BETWEEN 30 AND 70; 
+
+Zadanie 3.
+
+1. SELECT * FROM zasob WHERE month(dataPozyskania) IN (07, 08);
+2. SELECT * FROM zasob WHERE rodzaj IS not null ORDER BY waga ASC;
+3. SELECT * FROM kreatura ORDER BY dataUr ASC LIMIT 5;
+
+Zadanie 4.
+
+1. SELECT DISTINCT(rodzaj) FROM kreatura; 
+2. SELET CONCAT(nazwa, " - ", rodzaj) FROM kreatura WHERE rodzaj LIKE 'wi%'; 
+3. SELECT waga*ilosc FROM zasob WHERE YEAR(dataPozyskania) BETWEEN 2000 AND 2007;
+
+Zadanie 5.
+
+1. SELECT waga * 0.7 AS masa_netto, waga * 0.3 AS waga_odpadki FROM zasob WHERE rodzaj='jedzenie';
+2. SELECT * FROM zasob WHERE rodzaj IS NULL;
+3. SELECT DISTINCT(rodzaj), nazwa FROM zasob WHERE nazwa LIKE 'ba%' or nazwa LIKE '%os' ORDER BY nazwa;
